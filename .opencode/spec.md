@@ -120,7 +120,7 @@ Single page with the following sections (anchor links):
 ### Phase 1 — Scaffolding (dispatch in parallel)
 1. **@architect** — Finalize architecture: Astro project structure, component hierarchy, directory layout
 2. **@frontend** — Set up Astro project with React plugin, Tailwind, shadcn/ui, build all sections (Hero, Menu, About, Contact, Footer)
-3. **@devops** — Set up Vercel deployment configuration (vercel.json, environment variables)
+3. **@devops** ✅ Set up Vercel deployment configuration (vercel.json, environment variables) — **COMPLETE**
 
 ### Phase 2 — Polish (after scaffolding)
 4. **@reviewer** — Review all code for quality, performance, and accessibility

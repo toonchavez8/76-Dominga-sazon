@@ -48,6 +48,25 @@ You design all database-related infrastructure based on the spec and architectur
   ```
 - Update `.opencode/spec.md` with completion status
 
+## Commit Protocol
+
+When you finish your work, commit your changes:
+
+```bash
+git add .
+git commit -m "db: [action] for [project]
+
+- [list what you created/changed]
+- [list key decisions]
+- [list files modified]"
+```
+
+**Rules:**
+- Use conventional commit prefix: `db:` for database work
+- Always include a detailed bullet list in the commit body
+- Commit only files you touched or are responsible for
+- Commit message must be in English
+
 ## Rules
 
 - ALWAYS read spec.md and architecture.md before starting

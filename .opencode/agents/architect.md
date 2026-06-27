@@ -59,6 +59,25 @@ Write your architecture design to `.opencode/architecture.md`:
 | ... | ... |
 ```
 
+## Commit Protocol
+
+When you finish your work, commit your changes:
+
+```bash
+git add .
+git commit -m "arch: design architecture for [project]
+
+- [list what you created/changed]
+- [list key decisions]
+- [list files modified]"
+```
+
+**Rules:**
+- Use conventional commit prefix: `arch:` for architect
+- Always include a detailed bullet list in the commit body
+- Commit only files you touched or are responsible for
+- Commit message must be in English
+
 ## Rules
 
 - ALWAYS read spec.md first

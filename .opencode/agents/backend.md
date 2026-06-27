@@ -33,6 +33,25 @@ You implement all backend code based on the spec and architecture.
 - Update `.opencode/spec.md` with completion status
 - Report what you built and any decisions made
 
+## Commit Protocol
+
+When you finish your work, commit your changes:
+
+```bash
+git add .
+git commit -m "feat: implement [feature] for [project]
+
+- [list what you created/changed]
+- [list key decisions]
+- [list files modified]"
+```
+
+**Rules:**
+- Use conventional commit prefix: `feat:` for new backend features, `refactor:` for restructuring, `fix:` for bug fixes
+- Always include a detailed bullet list in the commit body
+- Commit only files you touched or are responsible for
+- Commit message must be in English
+
 ## Rules
 
 - ALWAYS read spec.md and architecture.md before starting

@@ -53,6 +53,25 @@ You configure all deployment and infrastructure based on the spec and architectu
   ```
 - Update `.opencode/spec.md` with completion status
 
+## Commit Protocol
+
+When you finish your work, commit your changes:
+
+```bash
+git add .
+git commit -m "ci: [action] for [project]
+
+- [list what you created/changed]
+- [list key decisions]
+- [list files modified]"
+```
+
+**Rules:**
+- Use conventional commit prefix: `ci:` for devops/CI/CD work, `chore:` for build/tooling
+- Always include a detailed bullet list in the commit body
+- Commit only files you touched or are responsible for
+- Commit message must be in English
+
 ## Rules
 
 - ALWAYS read spec.md and architecture.md before starting
