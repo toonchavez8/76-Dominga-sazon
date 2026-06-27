@@ -1,0 +1,95 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "orchestrator": {
+      "description": "Main orchestrator that runs the provisioning workflow - asks discovery questions, generates project spec, dispatches worker agents in parallel, and monitors progress",
+      "mode": "primary",
+      "color": "primary",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow",
+        "task": {
+          "*": "allow",
+          "learner": "allow"
+        }
+      }
+    },
+    "architect": {
+      "description": "Designs system architecture, chooses patterns, and makes technical decisions based on the project spec",
+      "mode": "subagent",
+      "color": "accent",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "frontend": {
+      "description": "Builds and implements the frontend - UI components, pages, styling, CMS integration, and client-side logic",
+      "mode": "subagent",
+      "color": "success",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "backend": {
+      "description": "Implements the backend - API routes, server logic, authentication, middleware, and server-side functionality",
+      "mode": "subagent",
+      "color": "success",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "database": {
+      "description": "Designs database schemas, creates migrations, sets up ORMs/query builders, and defines data models",
+      "mode": "subagent",
+      "color": "success",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "devops": {
+      "description": "Sets up deployment configuration, CI/CD pipelines, environment setup, and infrastructure-as-code",
+      "mode": "subagent",
+      "color": "info",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "reviewer": {
+      "description": "Reviews all generated code for quality, security, performance, and adherence to the spec and architecture",
+      "mode": "subagent",
+      "color": "warning",
+      "permission": {
+        "edit": "deny",
+        "bash": {
+          "git diff *": "allow",
+          "git log *": "allow",
+          "grep *": "allow"
+        }
+      }
+    },
+    "tester": {
+      "description": "Sets up testing infrastructure, writes unit/integration/E2E tests, and ensures test coverage",
+      "mode": "subagent",
+      "color": "info",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "learner": {
+      "description": "Discovers and installs new skills from the ecosystem when existing skills don't cover a project's needs",
+      "mode": "subagent",
+      "hidden": true,
+      "permission": {
+        "bash": {
+          "npx skills *": "allow"
+        }
+      }
+    }
+  }
+}
