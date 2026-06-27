@@ -1,9 +1,10 @@
 # Project Specification
 
 ## Overview
-- **Project:** Dominga y su Sazon
+- **Project:** Dominga y su Sazón
 - **Type:** Restaurant Landing Page
-- **Description:** A beautiful, fast single-page landing page for "Dominga y Sazon" — a restaurant showcasing the menu with prices, contact information, location via Google Maps, and an About Us section. Designed to be warm, appetizing, and mobile-first.
+- **Description:** A beautiful, fast single-page landing page for "Dominga y su Sazón" — a Salvadoran/Mexican home-cooked restaurant. Showcasing the menu with prices, contact information, location in El Fortín, Guadalajara Jalisco, and an About Us section. Designed to be warm, appetizing, and mobile-first.
+- **Language:** Spanish (oriented to Mexican community)
 
 ## Tech Stack
 - **Frontend:** Astro.js (with React plugin for interactive components)
@@ -17,60 +18,102 @@ Astro will be the core framework, leveraging its "islands architecture" where th
 
 The site will be a **single-page scrollable layout** with smooth anchor navigation between sections.
 
+## Color Palette (Custom CSS Variables)
+```css
+/* Warm, appetizing palette inspired by traditional cooking */
+--dominga-cream: #E8DDD2;
+--dominga-parchment: #D6BDAE;
+--dominga-sand: #CFAF98;
+--dominga-tan: #B9A18F;
+
+--dominga-brown: #6E1405;
+--dominga-dark-brown: #3E1208;
+
+--dominga-red: #A32008;
+--dominga-brick: #B53012;
+--dominga-chili: #C74319;
+
+--dominga-orange: #F09A00;
+--dominga-gold: #E6B44A;
+
+--dominga-charcoal: #2F2F2F;
+--dominga-black: #1F1F1F;
+
+--dominga-accent: #D83A17;
+--dominga-border: #8B1D0D;
+```
+
 ## Pages/Routes
 Single page with the following sections (anchor links):
 
-1. **Hero** — Full-width hero with restaurant name, tagline, logo, and a CTA ("View Menu" / "Contact Us")
-2. **About** — Story of Dominga y su Sazon, the food, the tradition
-3. **Menu** — Menu categories with items, descriptions, and prices (organized by category: appetizers, mains, desserts, drinks, etc.)
-4. **Contact** — Contact info, phone number, hours, Google Maps embed, Google Reviews
-5. **Footer** — Logo, social links, copyright
+1. **Hero** — Full-width hero with restaurant name, tagline "Pupusas, tacos de barbacoa y otros antojitos", logo, and CTA buttons ("Ver Menú" / "Contáctanos")
+2. **About** — Story of Dominga y su Sazón, the food, the tradition, hours (Sábados y Domingas)
+3. **Menu** — Menu categories with items, descriptions, and prices
+4. **Contact** — Contact info, phone, hours, address, Google Maps embed, Google Reviews
+5. **Footer** — Social links (hidden component), copyright
 
 ## Features
 
 ### Core Features
 - **Responsive design** — Mobile-first, looks great on all devices
 - **Smooth scroll navigation** — Sticky nav bar with anchor links
-- **Menu section** — Categorized menu with prices, organized in cards or a grid
-- **Hero section** — Eye-catching with placeholder images (to be replaced with real food photos)
-- **About section** — Warm, storytelling layout with placeholder imagery
+- **Menu section** — Categorized menu with prices, organized in cards
+- **Hero section** — Eye-catching with placeholder images
+- **About section** — Warm, storytelling layout
 - **Contact section** — Phone (click-to-call), address, hours, embedded Google Map
 - **WhatsApp button** — Floating action button for direct messaging
-- **Google Reviews** — Link or embed to restaurant's Google Reviews
-- **Placeholder images** — Easy-to-replace placeholders for food photos and logo
+- **Google Reviews** — Link to reviews
+- **Placeholder images** — Easy-to-replace placeholders
 
 ### Integrations
-- **Google Maps** — Embedded map showing restaurant location
-- **Google Reviews** — Link or embed to reviews
-- **WhatsApp** — Floating chat button with pre-filled message
-- **Click-to-call** — Phone number links for mobile users
-- **Social media links** — Instagram, Facebook, etc. (as provided)
+- **Google Maps** — Embedded map showing restaurant location (El Fortín, Guadalajara, Jalisco)
+- **Google Reviews** — Link to reviews
+- **WhatsApp** — Floating chat button (+52 1 33 2262 6550)
+- **Click-to-call** — Phone number links
+- **Social media** — Hidden component, ready to enable later
 
-## Data Model
-Not applicable — this is a static site. Menu data will be stored in a simple JSON/TS file for easy editing.
-
-### Menu Data Structure
-```typescript
-interface MenuItem {
-  name: string;
-  description: string;
-  price: string;
-  category: string;
-  image?: string;
-}
-
-interface MenuCategory {
-  name: string;
-  items: MenuItem[];
+## Menu Data (menu.json)
+```json
+{
+  "restaurant": "Dominga y su Sazón",
+  "sections": {
+    "alimentos": [
+      { "name": "Pupusa", "description": "Chicharrón Frijol y Queso", "price": 35 },
+      { "name": "Pupusa Cargada", "price": 45 },
+      { "name": "Tacos de Barbacoa", "price": 22 },
+      { "name": "Tacos con Queso", "price": 26 },
+      { "name": "Volteado", "price": 32 },
+      { "name": "Consome", "price": 10 }
+    ],
+    "bebidas": [
+      { "name": "Café de Olla", "price": 25 },
+      { "name": "Agua de 1/2 lt.", "price": 25 },
+      { "name": "Agua de 1 lt.", "price": 45 },
+      { "name": "Agua Natural", "price": 20 },
+      { "name": "Coca-Cola", "price": 30 },
+      { "name": "Coca-Cola 0", "price": 35 }
+    ]
+  },
+  "extras": [
+    { "name": "Salsa Macha", "price": 100 }
+  ]
 }
 ```
+
+## Restaurant Details
+- **Name:** Dominga y su Sazón
+- **Location:** El Fortín, Guadalajara, Jalisco, México
+- **Hours:** Sábados y Domingos (to be confirmed from Google Maps)
+- **Phone:** +52 1 33 2262 6550
+- **Google Maps:** https://maps.app.goo.gl/3KHw8nktGdRja7h39
 
 ## Design Direction
 - **Warm, inviting, and appetizing** — earthy tones, rich food photography
 - **Clean, modern layout** — shadcn/ui components with custom styling
 - **Typography** — Elegant headings, readable body text
-- **Color palette** — Warm colors (terracotta, cream, deep greens, gold accents)
+- **Color palette** — Custom warm palette (terracotta, cream, chili red, gold accents)
 - **Mobile-first** — Prioritize mobile experience
+- **Spanish language** — All content in Spanish
 
 ## Agent Dispatch Plan
 
@@ -87,3 +130,4 @@ interface MenuCategory {
 - Verify `shadcn` skill is available ✅
 - Check if `tailwind-patterns` skill applies to Astro ✅
 - Check for Astro-specific skill — install from marketplace if needed
+- Check for `imagegen-frontend-web` skill for future image generation
