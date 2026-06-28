@@ -1,0 +1,70 @@
+{
+	"restaurant": "Dominga y su Sazón",
+	"sections": {
+		"alimentos": [
+			{
+				"name": "Pupusa",
+				"description": "Chicharrón, frijol y queso",
+				"price": 35
+			},
+			{
+				"name": "Pupusa Cargada",
+				"description": "Chicharrón, frijol, queso y loroco",
+				"price": 45
+			},
+			{
+				"name": "Tacos de Barbacoa",
+				"description": "Barbacoa de res con cilantro y cebolla",
+				"price": 22
+			},
+			{
+				"name": "Tacos con Queso",
+				"description": "Queso derretido en tortilla de maíz",
+				"price": 26
+			},
+			{
+				"name": "Volteado",
+				"description": "Pan dulce con cajeta y nuez",
+				"price": 32
+			},
+			{
+				"name": "Consomé",
+				"description": "Caldo de res con verduras",
+				"price": 10
+			}
+		],
+		"bebidas": [
+			{
+				"name": "Café de Olla",
+				"description": "Café cocido con piloncillo y canela",
+				"price": 25
+			},
+			{
+				"name": "Agua de ½ lt.",
+				"description": "Agua natural del día",
+				"price": 25
+			},
+			{
+				"name": "Agua de 1 lt.",
+				"description": "Agua natural del día",
+				"price": 45
+			},
+			{
+				"name": "Agua Natural",
+				"description": "Agua fresca del día",
+				"price": 20
+			},
+			{
+				"name": "Coca-Cola",
+				"description": "Coca-Cola de 600 ml",
+				"price": 30
+			},
+			{
+				"name": "Coca-Cola 0",
+				"description": "Coca-Cola Zero de 600 ml",
+				"price": 35
+			}
+		]
+	},
+	"extras": [{ "name": "Salsa Macha", "price": 100 }]
+}

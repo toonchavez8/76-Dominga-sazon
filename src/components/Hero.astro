@@ -1,0 +1,82 @@
+---
+// Hero.astro — Full-bleed hero: name, tagline, CTAs
+---
+
+<section
+    id="inicio"
+    class="relative min-h-dvh flex items-center justify-center overflow-hidden"
+>
+    <!-- Background gradient -->
+    <div class="absolute inset-0" style="background: var(--gradient-hero);">
+        <!-- Subtle texture -->
+        <div
+            class="absolute inset-0 opacity-[0.03]"
+            style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);"
+        >
+        </div>
+    </div>
+
+    <!-- Ambient glow -->
+    <div
+        class="absolute top-1/3 right-1/4 w-96 h-96 rounded-full opacity-[0.06]"
+        style="background: var(--color-dominia-gold); filter: blur(100px);"
+    >
+    </div>
+    <div
+        class="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full opacity-[0.04]"
+        style="background: var(--color-dominia-terracotta); filter: blur(80px);"
+    >
+    </div>
+
+    <!-- Content -->
+    <div
+        class="relative z-10 text-center px-6 max-w-4xl mx-auto"
+        style="padding-top: 8rem; padding-bottom: 8rem;"
+    >
+        <!-- Name -->
+        <h1 class="text-white text-balance mb-6 animate-fade-in-up">
+            Dominga
+            <br />
+            <span
+                style="color: var(--color-dominia-gold); font-weight: 400; font-style: italic;"
+                >y su Sazón</span
+            >
+        </h1>
+
+        <!-- Tagline -->
+        <p
+            class="text-base sm:text-lg md:text-xl text-white/70 mb-10 max-w-xl mx-auto text-balance leading-relaxed animate-fade-in-up delay-200"
+        >
+            Pupusas, tacos de barbacoa y antojitos salvadoreños y mexicanos.
+            <br class="sm:hidden" />
+            Sábados y Domingos en El Fortín, Guadalajara.
+        </p>
+
+        <!-- CTAs — one primary, one secondary -->
+        <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-in-up delay-400"
+        >
+            <a
+                href="#menu"
+                class="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-dominia-ink transition-all duration-300 hover:shadow-lg active:scale-[0.98]"
+                style="background: var(--color-dominia-gold);"
+            >
+                Ver el menú
+            </a>
+            <a
+                href="#contacto"
+                class="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white/90 border transition-all duration-300 hover:bg-white/10 active:scale-[0.98]"
+                style="border-color: rgba(255,255,255,0.25);"
+            >
+                Cómo llegar
+            </a>
+        </div>
+    </div>
+
+    <!-- Bottom accent line -->
+    <div
+        class="absolute bottom-0 left-0 right-0 h-px"
+        style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1) 50%, transparent);"
+    >
+    </div>
+</section>

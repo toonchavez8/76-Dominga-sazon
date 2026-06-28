@@ -1,0 +1,42 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+
+const title =
+    "Dominga y su Sazón | Pupusas, tacos de barbacoa y otros antojitos";
+
+const description =
+    "Auténtica comida salvadoreña y mexicana en El Fortín, Guadalajara.";
+
+const site = "https://dominga-sazon.vercel.app";
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <meta property="og:title" content="Dominga y su Sazón" />
+        <meta
+            property="og:description"
+            content="Auténtica comida salvadoreña y mexicana en El Fortín, Guadalajara. Pupusas, tacos de barbacoa y más."
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <slot name="head" />
+    </head>
+    <body class="bg-dominia-paper text-dominia-ink antialiased">
+        <!-- Subtle grain overlay -->
+        <div class="grain-overlay" aria-hidden="true"></div>
+
+        <Navbar />
+        <main id="main-content">
+            <slot />
+        </main>
+        <Footer />
+        <WhatsAppButton />
+    </body>
+</html>
