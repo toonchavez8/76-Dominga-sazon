@@ -1,0 +1,36 @@
+---
+/* biome-ignore lint/correctness/noUnusedImports: Astro island component */
+import menuData from "../data/menu.json";
+/* biome-ignore lint/correctness/noUnusedImports: Astro island component */
+import MenuSection from "./MenuSection";
+
+// Menu.astro — Categorized menu with category tabs
+---
+
+<section
+    id="menu"
+    class="py-24 sm:py-32"
+    style="background: var(--color-dominia-warm-white);"
+>
+    <div class="mx-auto max-w-4xl px-6">
+        <!-- Section header — no eyebrow, no decorative line -->
+        <div class="text-center mb-12 sm:mb-16">
+            <h2 class="mb-4">Nuestro menú</h2>
+            <p
+                class="text-base text-dominia-slate max-w-md mx-auto text-balance"
+            >
+                Todos los platillos se preparan al momento. Precios por pieza.
+            </p>
+        </div>
+
+        <!-- React island for interactive category filtering -->
+        <div client:load>
+            <MenuSection menuData={menuData} />
+        </div>
+    </div>
+</section>
+
+<script>
+    import menuData from "../data/menu.json";
+    import MenuSection from "../components/MenuSection.tsx";
+</script>

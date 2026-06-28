@@ -1,0 +1,64 @@
+{
+	"buildCommand": "astro build",
+	"outputDirectory": "dist",
+	"devCommand": "astro dev",
+	"framework": "astro",
+	"rewrites": {
+		"/": "/index.html"
+	},
+	"headers": [
+		{
+			"source": "/assets/*",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=31536000, immutable"
+				}
+			]
+		},
+		{
+			"source": "/images/*",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=31536000, immutable"
+				}
+			]
+		},
+		{
+			"source": "/fonts/*",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=31536000, immutable"
+				}
+			]
+		},
+		{
+			"source": "/.(well-known|manifest|icon|sitemap|robots).{0,}",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=3600"
+				}
+			]
+		},
+		{
+			"source": "/*",
+			"headers": [
+				{
+					"key": "X-Content-Type-Options",
+					"value": "nosniff"
+				},
+				{
+					"key": "X-Frame-Options",
+					"value": "DENY"
+				},
+				{
+					"key": "X-XSS-Protection",
+					"value": "1; mode=block"
+				}
+			]
+		}
+	]
+}

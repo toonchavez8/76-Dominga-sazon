@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="aboutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D6BDAE"/>
+      <stop offset="50%" style="stop-color:#CFAF98"/>
+      <stop offset="100%" style="stop-color:#B9A18F"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#aboutGrad)"/>
+  <text x="400" y="280" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#6E1405" opacity="0.4">About placeholder · Reemplazar con foto de comida</text>
+  <text x="400" y="320" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6E1405" opacity="0.3">16:9 aspect ratio</text>
+</svg>
