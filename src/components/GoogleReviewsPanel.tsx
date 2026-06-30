@@ -200,7 +200,7 @@ export default function GoogleReviewsPanel({
   const [details, setDetails] = useState<PlaceDetails | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(Boolean(mapsApiKey && placeId));
-  const railRef = useRef<HTMLDivElement | null>(null);
+  const railRef = useRef<HTMLFieldSetElement | null>(null);
   const pauseAutoScrollRef = useRef(false);
   const draggingRef = useRef(false);
   const dragStartXRef = useRef(0);
@@ -337,7 +337,7 @@ export default function GoogleReviewsPanel({
     rail.scrollBy({ left: step * direction, behavior: "smooth" });
   }
 
-  function handlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
+  function handlePointerDown(event: React.PointerEvent<HTMLFieldSetElement>) {
     const rail = railRef.current;
     if (!rail) {
       return;
@@ -350,7 +350,7 @@ export default function GoogleReviewsPanel({
     rail.setPointerCapture(event.pointerId);
   }
 
-  function handlePointerMove(event: React.PointerEvent<HTMLDivElement>) {
+  function handlePointerMove(event: React.PointerEvent<HTMLFieldSetElement>) {
     const rail = railRef.current;
     if (!rail || !draggingRef.current) {
       return;
@@ -360,7 +360,7 @@ export default function GoogleReviewsPanel({
     rail.scrollLeft = dragStartScrollLeftRef.current - delta;
   }
 
-  function handlePointerEnd(event: React.PointerEvent<HTMLDivElement>) {
+  function handlePointerEnd(event: React.PointerEvent<HTMLFieldSetElement>) {
     const rail = railRef.current;
     if (!rail) {
       return;
@@ -549,13 +549,13 @@ export default function GoogleReviewsPanel({
               onBlur={() => {
                 pauseAutoScrollRef.current = false;
               }}
-              className="m-0 flex min-w-0 cursor-grab gap-6 overflow-x-auto border-0 px-1 pb-4 pt-18 select-none [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden sm:px-2 sm:pt-20"
+              className="m-0 flex min-w-0 cursor-grab gap-6 overflow-x-auto border-0 px-1 pb-4 pt-18 select-none scrollbar-none active:cursor-grabbing [&::-webkit-scrollbar]:hidden sm:px-2 sm:pt-20"
             >
               {loopedReviews.map((review, index) => (
                 <article
                   key={getReviewKey(review, index)}
                   data-review-card
-                  className="flex h-[18rem] w-[18.5rem] shrink-0 flex-col justify-between rounded-[28px] border p-5 sm:h-[19rem] sm:w-[24rem] sm:p-6"
+                  className="flex h-72 w-74 shrink-0 flex-col justify-between rounded-[28px] border p-5 sm:h-76 sm:w-[24rem] sm:p-6"
                   style={{
                     background: "var(--color-dominia-warm-white)",
                     borderColor: "rgba(224, 219, 213, 0.85)",

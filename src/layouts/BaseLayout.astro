@@ -70,7 +70,7 @@ const ogImage = `${siteUrl}/images/hero-placeholder.svg`;
 <script>
     import { getPhoneHref, getWhatsAppHref } from "../lib/contactLinks";
 
-    const contactLinks = {
+    const contactLinks: Record<"phone" | "whatsapp", string> = {
         phone: getPhoneHref(),
         whatsapp: getWhatsAppHref(),
     };
@@ -84,7 +84,10 @@ const ogImage = `${siteUrl}/images/hero-placeholder.svg`;
             }
 
             const type = node.dataset.contactLink;
-            const href = type ? contactLinks[type] : null;
+            const href =
+                type === "phone" || type === "whatsapp"
+                    ? contactLinks[type]
+                    : null;
 
             if (!href) {
                 return;
