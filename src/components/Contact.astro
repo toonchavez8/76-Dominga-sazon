@@ -1,5 +1,6 @@
 ---
-// Contact.astro — Contact info, location, map
+/* biome-ignore lint/correctness/noUnusedVariables: Astro frontmatter variable is used in template markup. */
+const mapsUrl = "https://maps.app.goo.gl/HSoDPpuf5S4Gw3Bs9";
 ---
 
 <section
@@ -7,20 +8,15 @@
     class="py-24 sm:py-32"
     style="background: var(--color-dominia-paper);"
 >
-    <div class="mx-auto max-w-4xl px-6">
-        <!-- Section header — no eyebrow, no decorative line -->
-        <div class="text-center mb-12 sm:mb-16">
+    <div class="mx-auto max-w-6xl px-6">
+        <div class="mb-12 text-center sm:mb-16">
             <h2 class="mb-4">Encuéntranos</h2>
-            <p
-                class="text-base text-dominia-slate max-w-md mx-auto text-balance"
-            >
-                Sábados y Domingos, de 11:00 a 16:00. Te esperamos.
+            <p class="mx-auto max-w-md text-base text-balance text-dominia-slate">
+                Sábados y domingos, de 11:00 a 16:00. Te esperamos.
             </p>
         </div>
 
-        <!-- Info cards — clean 3-column grid -->
-        <div class="grid sm:grid-cols-3 gap-4 mb-16">
-            <!-- Phone -->
+        <div class="mb-16 grid gap-4 sm:grid-cols-3">
             <a
                 href="tel:+5213322626550"
                 class="group block rounded-xl p-5 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
@@ -28,11 +24,11 @@
                 aria-label="Llamar al +52 1 33 2262 6550"
             >
                 <div
-                    class="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+                    class="mb-3 flex h-9 w-9 items-center justify-center rounded-lg"
                     style="background: var(--color-dominia-terracotta-light);"
                 >
                     <svg
-                        class="w-4.5 h-4.5"
+                        class="h-4.5 w-4.5"
                         style="color: var(--color-dominia-terracotta);"
                         fill="none"
                         stroke="currentColor"
@@ -47,7 +43,7 @@
                     </svg>
                 </div>
                 <h3
-                    class="text-sm font-semibold mb-1"
+                    class="mb-1 text-sm font-semibold"
                     style="color: var(--color-dominia-ink);"
                 >
                     Teléfono
@@ -60,20 +56,19 @@
                 </p>
             </a>
 
-            <!-- Location -->
             <a
-                href="https://maps.app.goo.gl/HSoDPpuf5S4Gw3Bs9"
+                href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="group block rounded-xl p-5 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
                 style="background: var(--color-dominia-warm-white); border: 1px solid var(--color-dominia-border); box-shadow: 0 1px 2px rgba(26, 24, 20, 0.03);"
             >
                 <div
-                    class="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+                    class="mb-3 flex h-9 w-9 items-center justify-center rounded-lg"
                     style="background: var(--color-dominia-gold-light);"
                 >
                     <svg
-                        class="w-4.5 h-4.5"
+                        class="h-4.5 w-4.5"
                         style="color: var(--color-dominia-gold);"
                         fill="none"
                         stroke="currentColor"
@@ -88,11 +83,12 @@
                         <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        ></path>
                     </svg>
                 </div>
                 <h3
-                    class="text-sm font-semibold mb-1"
+                    class="mb-1 text-sm font-semibold"
                     style="color: var(--color-dominia-ink);"
                 >
                     Dirección
@@ -105,17 +101,16 @@
                 </p>
             </a>
 
-            <!-- Hours -->
             <div
                 class="rounded-xl p-5"
                 style="background: var(--color-dominia-warm-white); border: 1px solid var(--color-dominia-border); box-shadow: 0 1px 2px rgba(26, 24, 20, 0.03);"
             >
                 <div
-                    class="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+                    class="mb-3 flex h-9 w-9 items-center justify-center rounded-lg"
                     style="background: rgba(212, 168, 83, 0.12);"
                 >
                     <svg
-                        class="w-4.5 h-4.5"
+                        class="h-4.5 w-4.5"
                         style="color: var(--color-dominia-gold);"
                         fill="none"
                         stroke="currentColor"
@@ -130,7 +125,7 @@
                     </svg>
                 </div>
                 <h3
-                    class="text-sm font-semibold mb-1"
+                    class="mb-1 text-sm font-semibold"
                     style="color: var(--color-dominia-ink);"
                 >
                     Horario
@@ -139,25 +134,26 @@
                     class="text-xs leading-relaxed"
                     style="color: var(--color-dominia-slate);"
                 >
-                    Sáb y Dom<br />11:00 – 16:00
+                    Sáb. y dom.<br />11:00 - 16:00
                 </p>
             </div>
         </div>
 
-        <!-- Map -->
         <div
-            class="rounded-2xl overflow-hidden border"
+            class="overflow-hidden rounded-2xl border"
             style="border-color: var(--color-dominia-border); box-shadow: 0 1px 3px rgba(26, 24, 20, 0.04);"
         >
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.028281824205!2d-103.47497472387792!3d20.62770400143089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ab00433fa173%3A0xd9e2856a7b0cbf55!2sDominga%20y%20su%20Saz%C3%B3n!5e0!3m2!1sen!2smx!4v1782615519195!5m2!1sen!2smx"
                 width="100%"
-                height="360"
-                style="border:0;"
+                height="100%"
+                class="min-h-[360px]"
+                style="border: 0;"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="Mapa de El Fortín, Guadalajara, Jalisco"
+                sandbox="allow-scripts allow-same-origin allow-popups"
+                title="Mapa de Dominga y su Sazón en El Fortín, Guadalajara, Jalisco"
             >
             </iframe>
         </div>

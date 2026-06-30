@@ -1,16 +1,68 @@
 ---
+/* biome-ignore lint/correctness/noUnusedImports: Astro frontmatter import is used in template markup. */
 import About from "../components/About.astro";
+/* biome-ignore lint/correctness/noUnusedImports: Astro frontmatter import is used in template markup. */
 import Contact from "../components/Contact.astro";
+/* biome-ignore lint/correctness/noUnusedImports: Astro frontmatter import is used in template markup. */
+import GoogleReviewsPanel from "../components/GoogleReviewsPanel";
+/* biome-ignore lint/correctness/noUnusedImports: Astro frontmatter import is used in template markup. */
 import Hero from "../components/Hero.astro";
+/* biome-ignore lint/correctness/noUnusedImports: Astro frontmatter import is used in template markup. */
 import Menu from "../components/Menu.astro";
-// index.astro — Main landing page for Dominga y su Sazón
+/* biome-ignore lint/correctness/noUnusedImports: Astro frontmatter import is used in template markup. */
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
+
+/* biome-ignore lint/correctness/noUnusedVariables: Astro frontmatter variable is used in template markup. */
+const mapsUrl = "https://maps.app.goo.gl/HSoDPpuf5S4Gw3Bs9";
+/* biome-ignore lint/correctness/noUnusedVariables: Astro frontmatter variable is used in template markup. */
+const mapsApiKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY;
+/* biome-ignore lint/correctness/noUnusedVariables: Astro frontmatter variable is used in template markup. */
+const placeId = import.meta.env.PUBLIC_GOOGLE_PLACE_ID;
 ---
 
 <BaseLayout>
+    <Fragment slot="head">
+        <script type="application/ld+json">
+            {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Restaurant",
+                name: "Dominga y su Sazón",
+                image: "https://dominga-sazon.vercel.app/images/hero-placeholder.svg",
+                url: "https://dominga-sazon.vercel.app",
+                telephone: "+52 1 33 2262 6550",
+                servesCuisine: ["Salvadoreña", "Mexicana", "Barbacoa", "Antojitos"],
+                priceRange: "$$",
+                address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Guadalajara",
+                    addressRegion: "Jalisco",
+                    addressCountry: "MX",
+                    streetAddress: "El Fortín",
+                },
+                openingHoursSpecification: [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        dayOfWeek: ["Saturday", "Sunday"],
+                        opens: "11:00",
+                        closes: "16:00",
+                    },
+                ],
+                hasMap: mapsUrl,
+                sameAs: [mapsUrl],
+            })}
+        </script>
+    </Fragment>
+
     <Hero />
     <About />
     <Menu />
+    <GoogleReviewsPanel
+        client:load
+        mapsApiKey={mapsApiKey}
+        placeId={placeId}
+        mapsUrl={mapsUrl}
+        placeName="Dominga y su Sazón"
+    />
     <Contact />
 </BaseLayout>

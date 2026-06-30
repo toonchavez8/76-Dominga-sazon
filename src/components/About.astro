@@ -1,16 +1,14 @@
 ---
-// About.astro — Story section: history, tradition, hours
 ---
 
 <section id="nosotros" class="py-24 sm:py-32">
     <div class="mx-auto max-w-6xl px-6">
-        <!-- Section header — no eyebrow, no decorative line -->
-        <div class="max-w-2xl mb-16 sm:mb-20">
+        <div class="mb-16 max-w-2xl sm:mb-20">
             <h2 class="mb-5">
                 De nuestra cocina<br class="sm:hidden" /> a tu mesa
             </h2>
             <p
-                class="text-base sm:text-lg text-dominia-slate leading-relaxed max-w-[65ch] text-balance"
+                class="max-w-[65ch] text-balance text-base leading-relaxed text-dominia-slate sm:text-lg"
             >
                 Sabores que abrazan el alma, cocinados con el cariño de quien
                 cocina para su familia. Cada platillo lleva consigo la receta de
@@ -18,31 +16,27 @@
             </p>
         </div>
 
-        <!-- Content grid — asymmetric: image left, text right on desktop -->
-        <div class="grid md:grid-cols-5 gap-8 lg:gap-12 items-start">
-            <!-- Image area (larger, left side) -->
+        <div class="grid items-start gap-8 md:grid-cols-5 lg:gap-12">
             <div class="md:col-span-3">
-                <div class="relative rounded-2xl overflow-hidden aspect-4/3">
+                <div class="relative aspect-4/3 overflow-hidden rounded-2xl">
                     <div
                         class="absolute inset-0"
                         style="background: linear-gradient(145deg, var(--color-dominia-terracotta-light) 0%, var(--color-dominia-stone) 50%, var(--color-dominia-surface) 100%);"
                     >
-                        <!-- Subtle pattern -->
                         <div
                             class="absolute inset-0 opacity-[0.04]"
                             style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236E1405' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;);"
                         >
                         </div>
-                        <!-- Center content -->
                         <div
-                            class="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+                            class="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
                         >
                             <div
-                                class="w-16 h-16 rounded-2xl flex items-center justify-center mb-4"
+                                class="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl"
                                 style="background: rgba(196, 91, 58, 0.08);"
                             >
                                 <svg
-                                    class="w-8 h-8"
+                                    class="h-8 w-8"
                                     style="color: var(--color-dominia-terracotta);"
                                     fill="none"
                                     stroke="currentColor"
@@ -63,7 +57,7 @@
                                 Imagen de la cocina
                             </span>
                             <span
-                                class="text-xs mt-1"
+                                class="mt-1 text-xs"
                                 style="color: var(--color-dominia-warm-gray);"
                             >
                                 Próximamente una foto real
@@ -73,40 +67,35 @@
                 </div>
             </div>
 
-            <!-- Story text + info cards (right side) -->
-            <div class="md:col-span-2 space-y-6">
+            <div class="space-y-6 md:col-span-2">
                 <div class="space-y-4">
-                    <p
-                        class="text-dominia-charcoal/85 leading-relaxed text-balance"
-                    >
+                    <p class="text-balance leading-relaxed text-dominia-charcoal/85">
                         Dominga y su Sazón nació del amor por la comida casera
-                        salvadoreña y mexicana. En El Fortín, Guadalajara,
-                        abrimos nuestras puertas los fines de semana para
-                        compartir con ustedes lo que sabemos hacer mejor: comida
-                        con sazón de verdad, como la que hacían las abuelas.
+                        salvadoreña y mexicana. En El Fortín, Guadalajara, abrimos
+                        nuestras puertas los fines de semana para compartir con
+                        ustedes lo que sabemos hacer mejor: comida con sazón de
+                        verdad, como la que hacían las abuelas.
                     </p>
                     <p
-                        class="text-dominia-charcoal/85 leading-relaxed text-balance"
+                        class="text-balance leading-relaxed text-dominia-charcoal/85"
                         style="font-style: italic; font-family: var(--font-heading); color: var(--color-dominia-terracotta);"
                     >
                         Ven y descubre por qué cada bocado sabe a hogar.
                     </p>
                 </div>
 
-                <!-- Info cards — clean, no eyebrow patterns -->
-                <div class="grid sm:grid-cols-2 gap-3 pt-2">
-                    <!-- Hours -->
+                <div class="grid gap-3 pt-2 sm:grid-cols-2">
                     <div
                         class="rounded-xl p-4"
                         style="background: var(--color-dominia-warm-white); border: 1px solid var(--color-dominia-border);"
                     >
-                        <div class="flex items-center gap-2.5 mb-2">
+                        <div class="mb-2 flex items-center gap-2.5">
                             <div
-                                class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                                class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
                                 style="background: var(--color-dominia-gold-light);"
                             >
                                 <svg
-                                    class="w-4 h-4"
+                                    class="h-4 w-4"
                                     style="color: var(--color-dominia-gold);"
                                     fill="none"
                                     stroke="currentColor"
@@ -131,27 +120,27 @@
                             class="text-xs leading-relaxed"
                             style="color: var(--color-dominia-slate);"
                         >
-                            Sábados y Domingos<br />
+                            Sábados y domingos<br />
                             <span
                                 class="font-semibold"
                                 style="color: var(--color-dominia-terracotta);"
-                                >11:00 a 16:00 hrs.</span
                             >
+                                11:00 a 16:00 hrs.
+                            </span>
                         </p>
                     </div>
 
-                    <!-- Location -->
                     <div
                         class="rounded-xl p-4"
                         style="background: var(--color-dominia-warm-white); border: 1px solid var(--color-dominia-border);"
                     >
-                        <div class="flex items-center gap-2.5 mb-2">
+                        <div class="mb-2 flex items-center gap-2.5">
                             <div
-                                class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                                class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
                                 style="background: var(--color-dominia-terracotta-light);"
                             >
                                 <svg
-                                    class="w-4 h-4"
+                                    class="h-4 w-4"
                                     style="color: var(--color-dominia-terracotta);"
                                     fill="none"
                                     stroke="currentColor"
@@ -185,8 +174,9 @@
                             <span
                                 class="font-semibold"
                                 style="color: var(--color-dominia-terracotta);"
-                                >Guadalajara, Jalisco</span
                             >
+                                Guadalajara, Jalisco
+                            </span>
                         </p>
                     </div>
                 </div>
