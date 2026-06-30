@@ -3,12 +3,9 @@
 	"outputDirectory": "dist",
 	"devCommand": "astro dev",
 	"framework": "astro",
-	"rewrites": {
-		"/": "/index.html"
-	},
 	"headers": [
 		{
-			"source": "/assets/*",
+			"source": "/assets/:path*",
 			"headers": [
 				{
 					"key": "Cache-Control",
@@ -17,7 +14,7 @@
 			]
 		},
 		{
-			"source": "/images/*",
+			"source": "/images/:path*",
 			"headers": [
 				{
 					"key": "Cache-Control",
@@ -26,7 +23,7 @@
 			]
 		},
 		{
-			"source": "/fonts/*",
+			"source": "/fonts/:path*",
 			"headers": [
 				{
 					"key": "Cache-Control",
@@ -35,16 +32,7 @@
 			]
 		},
 		{
-			"source": "/.(well-known|manifest|icon|sitemap|robots).{0,}",
-			"headers": [
-				{
-					"key": "Cache-Control",
-					"value": "public, max-age=3600"
-				}
-			]
-		},
-		{
-			"source": "/*",
+			"source": "/(.*)",
 			"headers": [
 				{
 					"key": "X-Content-Type-Options",

@@ -28,7 +28,7 @@ npm i -g vercel
 vercel login
 
 # Link the project (first time only)
-vercel link --project dominga-sazon --scope <your-team-or-username>
+vercel link --project 76-dominga-sazon --scope toonchavez8
 
 # Deploy to preview
 vercel
