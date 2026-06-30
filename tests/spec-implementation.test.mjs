@@ -1,7 +1,7 @@
-import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
+import test from "node:test";
 
 const root = process.cwd();
 
@@ -24,16 +24,56 @@ test("visible content files no longer contain mojibake sequences", () => {
 
 	for (const file of files) {
 		const source = read(file);
-		assert.equal(source.includes("Ã"), false, `${file} still contains mojibake`);
-		assert.equal(source.includes("Â"), false, `${file} still contains mojibake`);
+		assert.equal(
+			source.includes("Ã"),
+			false,
+			`${file} still contains mojibake`,
+		);
+		assert.equal(
+			source.includes("Â"),
+			false,
+			`${file} still contains mojibake`,
+		);
 	}
 });
 
 test("contact section includes hardened iframe and Google reviews panel", () => {
 	const contact = read("src/components/Contact.astro");
-	assert.match(contact, /sandbox="allow-scripts allow-same-origin allow-popups"/);
+	assert.match(
+		contact,
+		/sandbox="allow-scripts allow-same-origin allow-popups"/,
+	);
 	const page = read("src/pages/index.astro");
 	assert.match(page, /<GoogleReviewsPanel/);
+});
+
+test("public source no longer exposes raw phone contact details", () => {
+	const files = [
+		"src/components/Contact.astro",
+		"src/components/Footer.astro",
+		"src/components/Navbar.astro",
+		"src/components/WhatsAppButtonclient.tsx",
+		"src/pages/index.astro",
+	];
+
+	for (const file of files) {
+		const source = read(file);
+		assert.equal(
+			source.includes("3322626550"),
+			false,
+			`${file} exposes the phone number`,
+		);
+		assert.equal(
+			source.includes("2262 6550"),
+			false,
+			`${file} exposes the phone number`,
+		);
+		assert.equal(
+			source.includes("wa.me/52"),
+			false,
+			`${file} exposes the WhatsApp number`,
+		);
+	}
 });
 
 test("reviews component renders fixed-width carousel cards with fade rails", () => {
