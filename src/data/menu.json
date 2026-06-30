@@ -4,22 +4,22 @@
 		"alimentos": [
 			{
 				"name": "Pupusa",
-				"description": "Recomendada mixtra de Chicharrón, frijol y queso",
+				"description": "Recomendada mixta de chicharrón, frijol y queso",
 				"price": 35
 			},
 			{
 				"name": "Pupusa Cargada",
-				"description": "Pupusa con Chicharrón, frijol, queso servida con barbacoa encima",
+				"description": "Pupusa con chicharrón, frijol y queso, servida con barbacoa encima",
 				"price": 45
 			},
 			{
 				"name": "Tacos de Barbacoa",
-				"description": "Taco deBarbacoa de res con cilantro y cebolla",
+				"description": "Taco de barbacoa de res con cilantro y cebolla",
 				"price": 22
 			},
 			{
 				"name": "Tacos con Queso",
-				"description": "Taco de Barbacoa con Queso derretido",
+				"description": "Taco de barbacoa con queso derretido",
 				"price": 26
 			},
 			{
@@ -29,7 +29,7 @@
 			},
 			{
 				"name": "Consomé",
-				"description": "Consome de res",
+				"description": "Consomé de res",
 				"price": 10
 			}
 		],
@@ -40,7 +40,7 @@
 				"price": 25
 			},
 			{
-				"name": "Agua de ½ lt.",
+				"name": "Agua de 1/2 lt.",
 				"description": "Agua natural del día",
 				"price": 25
 			},

@@ -1,35 +1,61 @@
 ---
+/* biome-ignore lint/correctness/noUnusedImports: Astro frontmatter import is used in template markup. */
 import Footer from "../components/Footer.astro";
+/* biome-ignore lint/correctness/noUnusedImports: Astro frontmatter import is used in template markup. */
 import Navbar from "../components/Navbar.astro";
+/* biome-ignore lint/correctness/noUnusedImports: Astro frontmatter import is used in template markup. */
 import WhatsAppButton from "../components/WhatsAppButton.astro";
 
-const title =
-    "Dominga y su Sazón | Pupusas, tacos de barbacoa y otros antojitos";
-
-const description =
-    "Auténtica comida salvadoreña y mexicana en El Fortín, Guadalajara.";
-
-const site = "https://dominga-sazon.vercel.app";
+/* biome-ignore lint/correctness/noUnusedVariables: Astro frontmatter variable is used in template markup. */
+const pageTitle =
+    "Dominga y su Sazón | Pupusas, tacos de barbacoa y antojitos en Guadalajara";
+/* biome-ignore lint/correctness/noUnusedVariables: Astro frontmatter variable is used in template markup. */
+const pageDescription =
+    "Dominga y su Sazón en El Fortín, Guadalajara: pupusas, tacos de barbacoa y antojitos salvadoreños y mexicanos. Horario de sábados y domingos, mapa, teléfono y reseñas.";
+const siteUrl = "https://dominga-sazon.vercel.app";
+/* biome-ignore lint/correctness/noUnusedVariables: Astro frontmatter variable is used in template markup. */
+const ogImage = `${siteUrl}/images/hero-placeholder.svg`;
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="es-MX" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="author" content="Dominga y su Sazón" />
         <meta name="generator" content={Astro.generator} />
-        <meta property="og:title" content="Dominga y su Sazón" />
-        <meta
-            property="og:description"
-            content="Auténtica comida salvadoreña y mexicana en El Fortín, Guadalajara. Pupusas, tacos de barbacoa y más."
-        />
+        <meta name="theme-color" content="#3E1208" />
+        <meta name="format-detection" content="telephone=yes" />
+        <meta name="geo.region" content="MX-JAL" />
+        <meta name="geo.placename" content="Guadalajara" />
+        <link rel="canonical" href={siteUrl} />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:site_name" content="Dominga y su Sazón" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:alt" content="Dominga y su Sazón en Guadalajara" />
+
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={ogImage} />
+        <meta
+            name="keywords"
+            content="Dominga y su Sazón, pupusas Guadalajara, tacos de barbacoa Guadalajara, comida salvadoreña Guadalajara, antojitos mexicanos Guadalajara, El Fortín Guadalajara"
+        />
         <slot name="head" />
     </head>
     <body class="bg-dominia-paper text-dominia-ink antialiased">
-        <!-- Subtle grain overlay -->
         <div class="grain-overlay" aria-hidden="true"></div>
 
         <Navbar />

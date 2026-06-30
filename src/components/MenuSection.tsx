@@ -14,6 +14,10 @@ const categoryLabels: Record<string, string> = {
 	extras: "Extras",
 };
 
+function getMenuItemKey(prefix: string, name: string, price: number) {
+	return `${prefix}-${name}-${price}`;
+}
+
 function MenuItem({
 	name,
 	description,
@@ -48,30 +52,6 @@ function MenuItem({
 	);
 }
 
-function CategoryGroup({
-	title,
-	items,
-}: {
-	title: string;
-	items: { name: string; description?: string; price: number }[];
-}) {
-	return (
-		<div className="mb-8 last:mb-0">
-			<h3
-				className="text-sm font-semibold uppercase tracking-[0.15em] mb-3"
-				style={{ color: "var(--color-dominia-warm-gray)" }}
-			>
-				{title}
-			</h3>
-			<div>
-				{items.map((item, idx) => (
-					<MenuItem key={`${title}-${idx}`} {...item} />
-				))}
-			</div>
-		</div>
-	);
-}
-
 export default function MenuSection({ menuData }: MenuSectionProps) {
 	const [activeTab, setActiveTab] = useState<string>("alimentos");
 
@@ -97,23 +77,32 @@ export default function MenuSection({ menuData }: MenuSectionProps) {
 
 				{/* Alimentos tab */}
 				<TabsContent value="alimentos">
-					{menuData.sections.alimentos.map((item, idx) => (
-						<MenuItem key={`alimento-${idx}`} {...item} />
+					{menuData.sections.alimentos.map((item) => (
+						<MenuItem
+							key={getMenuItemKey("alimento", item.name, item.price)}
+							{...item}
+						/>
 					))}
 				</TabsContent>
 
 				{/* Bebidas tab */}
 				<TabsContent value="bebidas">
-					{menuData.sections.bebidas.map((item, idx) => (
-						<MenuItem key={`bebida-${idx}`} {...item} />
+					{menuData.sections.bebidas.map((item) => (
+						<MenuItem
+							key={getMenuItemKey("bebida", item.name, item.price)}
+							{...item}
+						/>
 					))}
 				</TabsContent>
 
 				{/* Extras tab */}
 				<TabsContent value="extras">
 					{menuData.extras.length > 0 ? (
-						menuData.extras.map((item, idx) => (
-							<MenuItem key={`extra-${idx}`} {...item} />
+						menuData.extras.map((item) => (
+							<MenuItem
+								key={getMenuItemKey("extra", item.name, item.price)}
+								{...item}
+							/>
 						))
 					) : (
 						<p className="text-sm text-dominia-warm-gray py-4">

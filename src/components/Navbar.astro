@@ -1,18 +1,16 @@
 ---
-// Navbar.astro — Floating pill navbar, detached from top edge
 ---
 
 <nav
     id="navbar"
-    class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4 transition-all duration-500"
+    class="fixed left-0 right-0 top-5 z-50 flex justify-center px-4 transition-all duration-500"
 >
     <div class="w-full max-w-5xl">
         <div
-            class="flex items-center justify-between h-14 px-5 rounded-full transition-all duration-500"
+            class="flex h-14 items-center justify-between rounded-full px-5 transition-all duration-500"
             style="background: rgba(253, 252, 250, 0.85); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); border: 1px solid rgba(224, 219, 213, 0.6); box-shadow: 0 1px 3px rgba(26, 24, 20, 0.04), 0 4px 12px rgba(26, 24, 20, 0.03);"
         >
-            <!-- Brand -->
-            <a href="#inicio" class="flex items-center gap-2.5 shrink-0">
+            <a href="#inicio" class="flex shrink-0 items-center gap-2.5">
                 <span
                     class="text-lg font-semibold tracking-tight"
                     style="font-family: var(--font-heading); color: var(--color-dominia-ink);"
@@ -20,7 +18,7 @@
                     Dominga
                 </span>
                 <span
-                    class="w-px h-5"
+                    class="h-5 w-px"
                     style="background: var(--color-dominia-border-deep);"
                 ></span>
                 <span
@@ -31,40 +29,38 @@
                 </span>
             </a>
 
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center gap-1">
+            <div class="hidden items-center gap-1 md:flex">
                 <a
                     href="#inicio"
-                    class="nav-link px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 hover:bg-dominia-terracotta-light"
+                    class="nav-link rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-200 hover:bg-dominia-terracotta-light"
                     style="color: var(--color-dominia-slate);"
                 >
                     Inicio
                 </a>
                 <a
                     href="#nosotros"
-                    class="nav-link px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 hover:bg-dominia-terracotta-light"
+                    class="nav-link rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-200 hover:bg-dominia-terracotta-light"
                     style="color: var(--color-dominia-slate);"
                 >
                     Nosotros
                 </a>
                 <a
                     href="#menu"
-                    class="nav-link px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 hover:bg-dominia-terracotta-light"
+                    class="nav-link rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-200 hover:bg-dominia-terracotta-light"
                     style="color: var(--color-dominia-slate);"
                 >
                     Menú
                 </a>
                 <a
                     href="#contacto"
-                    class="nav-link px-4 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 hover:bg-dominia-terracotta-light"
+                    class="nav-link rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-200 hover:bg-dominia-terracotta-light"
                     style="color: var(--color-dominia-slate);"
                 >
                     Contacto
                 </a>
             </div>
 
-            <!-- CTA -->
-            <div class="hidden md:flex items-center gap-3">
+            <div class="hidden items-center gap-3 md:flex">
                 <a
                     href="https://wa.me/5213322626550"
                     target="_blank"
@@ -76,18 +72,17 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <button
                     id="mobile-menu-toggle"
-                    class="p-2 rounded-full transition-colors duration-200 hover:bg-dominia-stone"
+                    class="rounded-full p-2 transition-colors duration-200 hover:bg-dominia-stone"
                     aria-label="Abrir menú"
                     aria-expanded="false"
                     aria-controls="mobile-menu"
                 >
                     <svg
                         id="menu-icon-open"
-                        class="w-5 h-5"
+                        class="h-5 w-5"
                         style="color: var(--color-dominia-ink);"
                         fill="none"
                         stroke="currentColor"
@@ -102,7 +97,7 @@
                     </svg>
                     <svg
                         id="menu-icon-close"
-                        class="w-5 h-5 hidden"
+                        class="hidden h-5 w-5"
                         style="color: var(--color-dominia-ink);"
                         fill="none"
                         stroke="currentColor"
@@ -112,43 +107,43 @@
                         <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            d="M6 18L18 6M6 6l12 12"></path>
+                            d="M6 18L18 6M6 6l12 12"
+                        ></path>
                     </svg>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div
             id="mobile-menu"
-            class="md:hidden hidden mt-2 rounded-2xl overflow-hidden"
+            class="mt-2 hidden overflow-hidden rounded-2xl md:hidden"
             style="background: rgba(253, 252, 250, 0.95); backdrop-filter: blur(16px); border: 1px solid rgba(224, 219, 213, 0.6); box-shadow: 0 4px 20px rgba(26, 24, 20, 0.08);"
         >
             <div class="flex flex-col gap-1 p-2">
                 <a
                     href="#inicio"
-                    class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium hover:bg-dominia-stone transition-colors"
+                    class="mobile-nav-link rounded-xl px-4 py-3 text-sm font-medium transition-colors hover:bg-dominia-stone"
                     style="color: var(--color-dominia-ink);"
                 >
                     Inicio
                 </a>
                 <a
                     href="#nosotros"
-                    class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium hover:bg-dominia-stone transition-colors"
+                    class="mobile-nav-link rounded-xl px-4 py-3 text-sm font-medium transition-colors hover:bg-dominia-stone"
                     style="color: var(--color-dominia-ink);"
                 >
                     Nosotros
                 </a>
                 <a
                     href="#menu"
-                    class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium hover:bg-dominia-stone transition-colors"
+                    class="mobile-nav-link rounded-xl px-4 py-3 text-sm font-medium transition-colors hover:bg-dominia-stone"
                     style="color: var(--color-dominia-ink);"
                 >
                     Menú
                 </a>
                 <a
                     href="#contacto"
-                    class="mobile-nav-link px-4 py-3 rounded-xl text-sm font-medium hover:bg-dominia-stone transition-colors"
+                    class="mobile-nav-link rounded-xl px-4 py-3 text-sm font-medium transition-colors hover:bg-dominia-stone"
                     style="color: var(--color-dominia-ink);"
                 >
                     Contacto
@@ -182,11 +177,8 @@
             menu.classList.toggle("hidden");
             iconOpen.classList.toggle("hidden");
             iconClose.classList.toggle("hidden");
-            toggle.setAttribute("aria-expanded", !isOpen);
-            toggle.setAttribute(
-                "aria-label",
-                isOpen ? "Abrir menú" : "Cerrar menú",
-            );
+            toggle.setAttribute("aria-expanded", String(!isOpen));
+            toggle.setAttribute("aria-label", isOpen ? "Abrir menú" : "Cerrar menú");
         });
     }
 
@@ -195,10 +187,11 @@
             menu?.classList.add("hidden");
             iconOpen?.classList.remove("hidden");
             iconClose?.classList.add("hidden");
+            toggle?.setAttribute("aria-expanded", "false");
+            toggle?.setAttribute("aria-label", "Abrir menú");
         });
     });
 
-    // Active link tracking
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".nav-link");
 
@@ -207,7 +200,7 @@
         sections.forEach((section) => {
             const top = section.offsetTop - 120;
             if (window.scrollY >= top) {
-                current = section.getAttribute("id");
+                current = section.getAttribute("id") ?? "";
             }
         });
         navLinks.forEach((link) => {

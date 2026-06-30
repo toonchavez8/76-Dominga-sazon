@@ -1,13 +1,6 @@
 ---
+/* biome-ignore lint/correctness/noUnusedImports: Astro frontmatter import is used in template markup. */
 import WhatsAppButton from "./WhatsAppButtonclient";
-
-// WhatsAppButton.astro — Floating WhatsApp FAB, React island
 ---
 
-<div client:load>
-    <WhatsAppButton />
-</div>
-
-<script>
-    import WhatsAppButton from "./WhatsAppButtonclient.tsx";
-</script>
+<WhatsAppButton client:load />
