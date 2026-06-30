@@ -8,10 +8,10 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
 
 /* biome-ignore lint/correctness/noUnusedVariables: Astro frontmatter variable is used in template markup. */
 const pageTitle =
-    "Dominga y su Sazón | Pupusas, tacos de barbacoa y antojitos en Guadalajara";
+	"Dominga y su Sazón | Pupusas, tacos de barbacoa y antojitos en Guadalajara";
 /* biome-ignore lint/correctness/noUnusedVariables: Astro frontmatter variable is used in template markup. */
 const pageDescription =
-    "Dominga y su Sazón en El Fortín, Guadalajara: pupusas, tacos de barbacoa y antojitos salvadoreños y mexicanos. Horario de sábados y domingos, mapa, teléfono y reseñas.";
+	"Dominga y su Sazón en El Fortín, Guadalajara: pupusas, tacos de barbacoa y antojitos salvadoreños y mexicanos. Horario de sábados y domingos, mapa, teléfono y reseñas.";
 const siteUrl = "https://dominga-sazon.vercel.app";
 /* biome-ignore lint/correctness/noUnusedVariables: Astro frontmatter variable is used in template markup. */
 const ogImage = `${siteUrl}/images/hero-placeholder.svg`;
@@ -28,7 +28,7 @@ const ogImage = `${siteUrl}/images/hero-placeholder.svg`;
         <meta name="author" content="Dominga y su Sazón" />
         <meta name="generator" content={Astro.generator} />
         <meta name="theme-color" content="#3E1208" />
-        <meta name="format-detection" content="telephone=yes" />
+        <meta name="format-detection" content="telephone=no" />
         <meta name="geo.region" content="MX-JAL" />
         <meta name="geo.placename" content="Guadalajara" />
         <link rel="canonical" href={siteUrl} />
@@ -66,3 +66,44 @@ const ogImage = `${siteUrl}/images/hero-placeholder.svg`;
         <WhatsAppButton />
     </body>
 </html>
+
+<script>
+    import { getPhoneHref, getWhatsAppHref } from "../lib/contactLinks";
+
+    const contactLinks = {
+        phone: getPhoneHref(),
+        whatsapp: getWhatsAppHref(),
+    };
+
+    const applyObfuscatedContactLinks = () => {
+        const links = document.querySelectorAll("[data-contact-link]");
+
+        links.forEach((node) => {
+            if (!(node instanceof HTMLAnchorElement)) {
+                return;
+            }
+
+            const type = node.dataset.contactLink;
+            const href = type ? contactLinks[type] : null;
+
+            if (!href) {
+                return;
+            }
+
+            node.href = href;
+
+            if (type === "whatsapp") {
+                node.target = "_blank";
+                node.rel = "noopener noreferrer";
+            }
+        });
+    };
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", applyObfuscatedContactLinks, {
+            once: true,
+        });
+    } else {
+        applyObfuscatedContactLinks();
+    }
+</script>

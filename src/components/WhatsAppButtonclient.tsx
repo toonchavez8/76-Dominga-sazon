@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
+import { getWhatsAppHref } from "../lib/contactLinks";
 
 export default function WhatsAppButtonclient() {
 	const [visible, setVisible] = useState(false);
+	const href = getWhatsAppHref();
 
 	const handleScroll = useCallback(() => {
 		const hero = document.getElementById("inicio");
@@ -19,7 +21,7 @@ export default function WhatsAppButtonclient() {
 
 	return (
 		<a
-			href="https://wa.me/5213322626550"
+			href={href}
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label="Contáctanos por WhatsApp"

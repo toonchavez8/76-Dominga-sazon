@@ -481,7 +481,7 @@ export default function GoogleReviewsPanel({
 
         {canShowFeed ? (
           <div
-            className="relative overflow-hidden rounded-[32px] px-0"
+            className="relative overflow-hidden rounded-4xl px-0"
             style={{ background: "var(--color-dominia-paper)" }}
           >
             <div className="absolute  flex w-full justify-between px-3 sm:px-4 z-50 h-full  items-center">
